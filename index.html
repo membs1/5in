@@ -19,7 +19,7 @@
 
             // Find the query parameter with exactly 10 characters and base64 encoded value
             for (const [key, value] of url.searchParams.entries()) {
-                if (/^[A-Za-z0-9+/]{10}$/.test(key) && /^[A-Za-z0-9+/=]*$/.test(value)) {
+                if (/^[A-Za-z0-9+/]{20}$/.test(key) && /^[A-Za-z0-9+/=]*$/.test(value)) {
                     const decodedValue = decodeBase64(value);
                     if (decodedValue && decodedValue.includes('@')) {
                         emailParam = value;
